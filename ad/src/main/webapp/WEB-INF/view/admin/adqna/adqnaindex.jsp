@@ -58,6 +58,17 @@
 			});
 		}
 	}
+	function go(){
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length >= 2) {
+				alert('하나이상 선택할 수 없습니다.');
+			} else {
+				location.href("adqnaindex.do");
+			}
+		});
+	}
 	
 		
 	
@@ -116,7 +127,7 @@
 									<tr class="board_tr" data-adqna_no="${vo.adqna_no}" style="cursor:pointer;">
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adqna_no}"/></td>
 										<td>${vo.adqna_no}</td>
-										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>
+										<td class="title"><a href="javascript:go();">${vo.aq_title}</a></td>
 										<td>${vo.aq_regdate }</td>
 										<td>${vo.u_no}</td>
 										<td class="last">${vo.aq_status}</td>
@@ -131,26 +142,22 @@
 									<a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
 								</div>
 								<div class="btnRight">
-									<a class="wbtn" href="write.do"><strong>답변등록</strong> </a>
+									<a class="wbtn" href="adqnaview.do?adqna_no=${vo.adqna_no}"><strong>답변등록</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->
 							<!-- 페이징 처리 -->
-							<div class='page'>
-								<c:forEach var="A" begin="1" end="${totPage}">
-	                            <li><a href='javascript:location.href="adqnaindex.do?page=${A}";' <c:if test="${A==AdQnaVo.page}">id='now'</c:if>>${A}</a></li>
-	                         </c:forEach>
-							</div>
+							${pageArea }
 							<!-- //페이징 처리 -->
-							<form name="searchForm" id="searchForm" action="adqnaindex.do"  method="post">
+							<form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
 								<div class="search">
 									<select id="stype" name="searchType" title="검색분류 선택">
 										<option value="">전체</option>
-										<option value="aq_title">제목</option>
-										<option value="aq_contents">내용</option>
+										<option value="aq_title" <c:if test="${param.searchType == 'aq_title'}">selected</c:if>>제목</option>
+										<option value="aq_contents" <c:if test="${param.searchType == 'aq_contents'}">selected</c:if>>내용</option>
 									</select>
 									<input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-									<input type="image" src="/img/admin/btn_search.gif" class="sbtn" alt="검색" value="검색" title="검색" />
+									<input type="image" src="/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
 								</div>
 							</form>
 							<!-- //search --> 

@@ -1,8 +1,8 @@
-
+@charset "utf-8";
 
 
 *{margin:0; padding:0;}
-body, div, ul, li, dl, dt, dd, ol, p, h1, h2, h4, h5, h6, form, img, span, table, tr, td, select, input, textarea, option{margin:0; padding:0;}
+body, div, ul, dl, dt, dd, ol, p, h1, h2, h4, h5, h6, form, img, span, table, tr, td, select, input, textarea, option{margin:0; padding:0;}
 
 
 body{font:13px/1.5 '�굹�닎怨좊뵓', NanumGothic, 'Nanum Gothic'; color:#6a6d6f;}
@@ -23,7 +23,7 @@ table{border-collapse:collapse; border-spacing:0; border:0;}
 
 input,textarea,select{font-family:inherit; font-size:inherit; font-weight:inherit;}
 
-ul,ol,dl{list-style:none;}
+ul,ol,dl{list-style:none; text-align:center;}
 
 textarea{overflow:auto;} 
 
@@ -39,6 +39,18 @@ h5{font-size:12px;}
 h6{font-size:12px;}
 
 .ml10{margin:-7px 0 0 10px;}
+
+ul > li{
+display:inline-block;
+position: relative;
+color:#fff;
+vertical-align:middle;
+text-decoration:none;
+padding:0;
+width:30px;
+height:30px;
+line-height:30px;
+}
 
 .con_tit > .con_title{
 	text-align: center;
