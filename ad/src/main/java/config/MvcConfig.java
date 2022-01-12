@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration // spring 설정파일
-@ComponentScan(basePackages = {"adqna"})
+@ComponentScan(basePackages = {"adqna,comment"})
 @EnableWebMvc // spring mvc 활성화 
 @EnableTransactionManagement //트랜잭션 활성화 
 public class MvcConfig implements WebMvcConfigurer{

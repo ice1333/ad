@@ -63,7 +63,7 @@
 		var row = chk.length;
 		$("input[name='Rchk']").click(function(){
 			if($("input[name='Rchk']:checked").length >= 2) {
-				alert('하나이상 선택할 수 없습니다.');
+				alert('답변 등록은 하나이상 선택할 수 없습니다.');
 			} else {
 				location.href("adqnaindex.do");
 			}
@@ -127,7 +127,7 @@
 									<tr class="board_tr" data-adqna_no="${vo.adqna_no}" style="cursor:pointer;">
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adqna_no}"/></td>
 										<td>${vo.adqna_no}</td>
-										<td class="title"><a href="javascript:go();">${vo.aq_title}</a></td>
+										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>
 										<td>${vo.aq_regdate }</td>
 										<td>${vo.u_no}</td>
 										<td class="last">${vo.aq_status}</td>
@@ -140,9 +140,6 @@
 							<div class="btn">
 								<div class="btnLeft">
 									<a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
-								</div>
-								<div class="btnRight">
-									<a class="wbtn" href="adqnaview.do?adqna_no=${vo.adqna_no}"><strong>답변등록</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->

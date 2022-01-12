@@ -23,7 +23,8 @@ table{border-collapse:collapse; border-spacing:0; border:0;}
 
 input,textarea,select{font-family:inherit; font-size:inherit; font-weight:inherit;}
 
-ul,ol,dl{list-style:none; text-align:center;}
+ul,ol{list-style:none; text-align:center;}
+
 
 textarea{overflow:auto;} 
 
@@ -64,6 +65,12 @@ hr{display:none; clear:both;}
 .disno{display:none;}
 .hidden{display:none;}
 
-
+.title dt{
+	clear:both;
+}
+.title .date{
+	text-align:right;
+	
+}
 
 

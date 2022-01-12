@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link href="<%=request.getContextPath()%>/ad/css/admin/view.css" rel="stylesheet" type="text/css" />
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<%@ include file="/WEB-INF/view/admin/include/headHtml.jsp" %>
+<%@ include file="/WEB-INF/view/admin/include/headHtml2.jsp" %>
 </head>
 
 <body>
@@ -38,16 +38,16 @@
 	                        <div class="btnSet clear">
 	                            <div class="fl_l">
 	                          <a href="adqnaindex.do" class="btn">목록</a>
-	                          <a href="edit.do?replyno" class="btn">수정</a>
 	                          <a href="javascript:del();" class="btn">삭제</a>
 	                          	</div>
 	                        </div>
 	                		<div>
 	                			
 			                    <form method="post" name="frm" id="frm" action="" enctype="multipart/form-data" >
-			                    <input type="hidden" name="tablename" value="reply">
-			                    <input type="hidden" name="boardno" value="${data.replyno}">
-			                    <input type="hidden" name="userno" value="${userInfo.userno }">
+			                    <input type="hidden" name="tablename" value="adqna">
+			                    <input type="hidden" name="a_no" value="${vo.a_no }">
+			                    <input type="hidden" name="boardno" value="${vo.adqna_no}">
+			                    <input type="hidden" name="u_no" value="${userInfo.userno }">
 			                        <table class="board_write">
 			                            <colgroup>
 			                                <col width="*" />
