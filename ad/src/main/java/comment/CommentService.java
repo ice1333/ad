@@ -11,15 +11,13 @@ public class CommentService {
 	@Autowired
 	CommentDao dao;
 	
-	public List<CommentVo> selectList(CommentVo vo) {
-		return dao.selectList(vo);
+	public List<CommentVo> adqselectList(CommentVo com){
+		return dao.adqselectList(com);
 	}
-	
-	public int insert(CommentVo vo) {
-		return dao.insert(vo);
+	public int adqcominsert(CommentVo com) {
+		return dao.adqcominsert(com);
 	}
-	
-	public int delete(int c_no) {
-		return dao.delete(c_no);
+	public int adqdelete(int c_no) {
+		return dao.adqdelete(c_no);
 	}
 }

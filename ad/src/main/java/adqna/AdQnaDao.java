@@ -19,8 +19,8 @@ public class AdQnaDao {
 	}
 	
 	//삭제
-	public int adqnadelete(AdQnaVo vo) {
-		return sst.delete("adqna.adqnadelete", vo.getAdqna_no());
+	public int delete(AdQnaVo vo) {
+		return sst.delete("adqna.delete", vo.getAdqna_no());
 	}
 	
 	//총갯수
