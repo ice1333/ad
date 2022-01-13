@@ -10,18 +10,19 @@ public class CommentVo {
 	private String tablename;
 	private String content;
 	private int u_no;
-	private int boardno;
+	private int adqna_no;
 	private Timestamp regdate;
 	private String u_name;
 	
 	
 	
 	
-	public int getBoardno() {
-		return boardno;
+	
+	public int getAdqna_no() {
+		return adqna_no;
 	}
-	public void setBoardno(int boardno) {
-		this.boardno = boardno;
+	public void setAdqna_no(int adqna_no) {
+		this.adqna_no = adqna_no;
 	}
 	public int getC_no() {
 		return c_no;

@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 //관리자에는 목록이랑 상세 -
 
+import comment.CommentService;
+import comment.CommentVo;
 import util.CommonUtil;
 
 @Controller
@@ -20,8 +21,8 @@ public class AdQnaController {
 
 	@Autowired
 	AdQnaService adqnaService;
-
-	
+	@Autowired
+	CommentService cmService;	
 	
 	@GetMapping("admin/adqnaindex.do") 
 	public String adqnaindex(Model model, HttpServletRequest req, AdQnaVo vo) {		
@@ -45,7 +46,11 @@ public class AdQnaController {
 	
 	@GetMapping("admin/adqnaview.do")
 	public String adqnaview(Model model,@RequestParam int adqna_no) {
-		model.addAttribute("num",adqnaService.no_select(adqna_no));
+		model.addAttribute("vo",adqnaService.no_select(adqna_no));
+		CommentVo cv = new CommentVo();
+		cv.setAdqna_no(adqna_no);
+		cv.setTablename("adqna");
+		model.addAttribute("list",cmService.adqselectList(cv));
 		return "admin/adqna/adqnaview";
 	}
 	
@@ -62,8 +67,12 @@ public class AdQnaController {
 	
 	@GetMapping("admin/delete.do")
 	public String delete(Model model, AdQnaVo vo) {
+		model.addAttribute("vo",adqnaService.delete(vo));
 		return "admin/adqna/adqnaindex";
 	}
+	
+	
+	
 	
 	
 }

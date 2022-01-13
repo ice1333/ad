@@ -5,17 +5,17 @@
 
 		
 	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
-		SELECT *, (SELECT u_name FROM user WHERE u_no=comment.u_no) u_name FROM comment 
-		WHERE boardno=#{boardno} AND tablename=#{tablename} 
+		SELECT * FROM comment 
+		WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
 		ORDER BY regdate DESC
 		 
 	</select>
 	
 	<insert id="adqcominsert" parameterType="comment.CommentVo">
 		INSERT INTO comment (
-		tablename, content, boardno , regdate , a_no 
+		tablename, content, adqna_no , regdate , a_no 
 		) values(
-		#{tablename}, #{content}, #{boardno} , NOW() ,#{a_no} 
+		#{tablename}, #{content}, #{adqna_no} , NOW() ,#{a_no} 
 		)
 	</insert>
 	

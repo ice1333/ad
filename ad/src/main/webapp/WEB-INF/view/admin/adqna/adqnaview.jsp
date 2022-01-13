@@ -14,7 +14,7 @@
 		 $.ajax({
 			url: 'delete.do',
 			type: 'get',
-			data:{adqna_no:${num.adqna_no}},
+			data:{adqna_no:${vo.adqna_no}},
 			success:function(){
 				alert('정상적으로 삭제되었습니다.');
 				location.href="adqnaindex.do";
@@ -24,50 +24,50 @@
 		}
 	} 	 
 	
-	/* function goSave(){
+	 function goSave(){
 		$.ajax({
-			url:'/ad/admin/comment/adqinsert.do',
-			type:'post',
+			url:'/ad/comment/adqcominsert.do',
+			type:'get',
 			data:$("#frm").serialize(), // serialize() 값을 넣어준다
 			success:function(res){
 				if(res.trim()=='1'){
 					alert("댓글이 등록되었습니다."); //댓글이 등록되었을때
 					$("#content").val("");
-					commentList('adqna_no',${vo.adqna_no});
+					commentList('adqna',${vo.adqna_no});
 				}else{
 					alert('댓글등록 오류');
 				}
 			}
 		})
 	}
-	function commentList(tablename, boardno){
+	function commentList(tablename, adqna_no){
 	$.ajax({
-		url:'/project/comment/list.do',
-		data:{tablename:tablename, boardno:boardno},
+		url:'/ad/comment/adqlist.do',
+		data:{tablename:tablename, adqna_no:adqna_no},
 			success:function(res) {
 				$("#commentArea").html(res);
 			}
 		})
 	}
 	$(function(){ //페이지가 열리자마자
-		commentList('reply',${data.replyno});
+		commentList('adqna',${vo.adqna_no});
 	})
 	function goDel(c_no){
 		if(confirm('댓글을 삭제하시겠습니까?')){
 			$.ajax({
-				url:"/project/comment/delete.do",
+				url:"/ad/comment/adqdelete.do",
 				data:{c_no:c_no},
 				success:function(res){
 					if(res.trim()=='1'){
 						alert('정상적으로 삭제되었습니다.');
-						commentList('reply', ${data.replyno});
+						commentList('adqna', ${vo.adqna_no});
 					} else {
 						alert('삭제 오류');
 					}
 				}
 			})
 		}
-	} */
+	} 
 </script>
 <body>
     <div class="wrap">
@@ -83,16 +83,16 @@
 	                    <div class="view">
 	                        <div class="title">
 	                            <dl>
-	                                <dt>${num.aq_title}</dt>
-	                                <dd class="date">${num.aq_regdate}</dd>
+	                                <dt>${vo.aq_title}</dt>
+	                                <dd class="date">${vo.aq_regdate}</dd>
 	                            </dl>
 	                        </div>
-	                        <div class="cont"><p>${num.aq_contents}</p> </div>
+	                        <div class="cont"><p>${vo.aq_contents}</p> </div>
 	                        <dl class="file">
 	                            <dt>첨부파일 </dt>
 	                            <dd>
-	                            <a href="/project/common/download.jsp?path=/upload/&org=${num.aq_filename_org}&real=${num.aq_filename_real}" 
-	                            target="_blank">${num.aq_filename_org} </a></dd>
+	                            <a href="/project/common/download.jsp?path=/upload/&org=${vo.aq_filename_org}&real=${vo.aq_filename_real}" 
+	                            target="_blank">${vo.aq_filename_org} </a></dd>
 	                        </dl>
 	                       
 	                        </div>
@@ -106,8 +106,8 @@
 	                			
 			                    <form method="post" name="frm" id="frm" action="" enctype="multipart/form-data" >
 			                    <input type="hidden" name="tablename" value="adqna">
-			                    <input type="hidden" name="a_no" value="${vo.a_no }"> <!-- 여기현수형이 -->
-			                    <input type="hidden" name="boardno" value="${vo.adqna_no}">
+			                    <!--<input type="hidden" name="a_no" value="${vo.a_no}"> 여기현수형이 -->
+			                    <input type="hidden" name="adqna_no" value="${vo.adqna_no}">
 			                        <table class="board_write">
 			                            <colgroup>
 			                                <col width="*" />
