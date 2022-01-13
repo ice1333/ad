@@ -12,22 +12,24 @@ public class CommentController {
 	@Autowired
 	CommentService service;
 	
-	@PostMapping("/comment/insert.do")
-	public String insert(Model model, CommentVo vo) {
-		model.addAttribute("result",service.insert(vo));
-		return "admin/include/result";
-	}
-	
-	@GetMapping("/comment/list.do")
-	public String list(Model model, CommentVo vo ) {
-		model.addAttribute("cList",service.selectList(vo));
+	@GetMapping("/comment/adqlist.do")
+	public String list(Model model, CommentVo com) {
+		model.addAttribute("chat",service.adqselectList(com));
 		return "admin/include/commentList";
 	}
 	
-	@GetMapping("/comment/delete.do")
-	public String delete(Model model, CommentVo vo) {
-		model.addAttribute("result",service.delete(vo.getC_no()));
+	@PostMapping("/comment/adqinsert.do")
+	public String insert(Model model, CommentVo com) {
+		model.addAttribute("result",service.adqcominsert(com));
 		return "admin/include/result";
 	}
+	
+	@GetMapping("/comment/adqdelete.do")
+	public String delete(Model model, CommentVo com) {
+		model.addAttribute("result",service.adqdelete(com.getC_no()));
+		return "admin/include/result";
+	}
+	
+	
 	
 }

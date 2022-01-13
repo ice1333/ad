@@ -22,7 +22,7 @@ public class AdQnaServiceImple implements AdQnaService {
 
 	@Override //삭제
 	public int delete(AdQnaVo vo) {
-		return adqnaDao.adqnadelete(vo);
+		return adqnaDao.delete(vo);
 	}
 
 	@Override //총갯수

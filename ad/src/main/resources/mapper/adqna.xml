@@ -88,6 +88,11 @@
 	</where>
 	</sql>
 	
+	<!-- 삭제 -->
+	<delete id="delete">
+		DELETE FROM ad.adqna WHERE adqna_no=#{adqna_no}
+	</delete>
+	
 	<!-- 문의 글 삭제  -->
 	<delete id="adqnadelete">
 		DELETE FROM ad.adqna WHERE adqna_no=#{adqna_no}

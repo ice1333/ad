@@ -4,7 +4,7 @@
 
 
 		
-	<select id="boardselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
+	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
 		SELECT *, (SELECT u_name FROM user WHERE u_no=comment.u_no) u_name FROM comment 
 		WHERE boardno=#{boardno} AND tablename=#{tablename} 
 		ORDER BY regdate DESC

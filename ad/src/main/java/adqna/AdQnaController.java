@@ -60,6 +60,10 @@ public class AdQnaController {
 		return "admin/include/result";
 	}
 	
+	@GetMapping("admin/delete.do")
+	public String delete(Model model, AdQnaVo vo) {
+		return "admin/adqna/adqnaindex";
+	}
 	
 	
 }

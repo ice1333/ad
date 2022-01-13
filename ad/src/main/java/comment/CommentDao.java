@@ -12,18 +12,13 @@ public class CommentDao {
 	@Autowired 
 	SqlSessionTemplate sst;
 	
-	//파마리터타입이 매개변수로 받음
-	public List<CommentVo> selectList(CommentVo cv) {
-		List<CommentVo> list = sst.selectList("comment.selectList", cv);
-		return list;
+	public List<CommentVo> adqselectList(CommentVo com){
+		return sst.selectList("comment.adqselectList",com);
 	}
-	
-	public int insert(CommentVo cv) {
-		return sst.insert("comment.insert", cv);
+	public int adqcominsert(CommentVo com) {
+		return sst.insert("comment.adqcominsert",com);
 	}
-	
-	public int delete(int c_no) {
-		return sst.delete("comment.delete", c_no);
+	public int adqdelete(int c_no) {
+		return sst.delete("comment.adqdelete",c_no);
 	}
-	
 }
