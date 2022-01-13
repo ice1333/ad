@@ -2,7 +2,73 @@
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+<script>
 
+function del(){
+	if(confirm("삭제하시겠습니까?")){
+	/* location.href="delete.do?boardno=${data.boardno}"; */
+	$.ajax({
+		url: 'deleteAjax.do',
+		data:{boardno:${data.boardno}},
+		success:function(res){
+			if(res.trim() == '1'){
+			alert('정상적으로 삭제되었습니다.');
+			location.href="index.do";
+			} else{
+				alert('삭제 오류');
+			}
+		}
+	});
+
+	}
+}	
+
+/* function goSave(){
+	$.ajax({
+		url:'/project/comment/insert.do',
+		type:'post',
+		data:$("#frm").serialize(), // serialize() 값을 넣어준다
+		success:function(res){
+			if(res.trim()=='1'){
+				alert("댓글이 등록되었습니다."); //댓글이 등록되었을때
+				$("#content").val("");
+				commentList('board',${data.boardno});
+			}else{
+				alert('댓글등록 오류');
+			}
+		}
+	})
+}
+function commentList(tablename, boardno){
+$.ajax({
+	url:'/project/comment/list.do',
+	data:{tablename:tablename, boardno:boardno},
+		success:function(res) {
+			$("#commentArea").html(res);
+		}
+	})
+}
+$(function(){ //페이지가 열리자마자
+	commentList('board',${data.boardno});
+})
+function goDel(c_no){
+	if(confirm('댓글을 삭제하시겠습니까?')){
+		$.ajax({
+			url:"/project/comment/delete.do",
+			data:{c_no:c_no},
+			success:function(res){
+				if(res.trim()=='1'){
+					alert('정상적으로 삭제되었습니다.');
+					commentList('board', ${data.boardno});
+				} else {
+					alert('삭제 오류');
+				}
+			}
+		})
+	}
+} */
+
+</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%@ include file="/WEB-INF/view/admin/include/headHtml2.jsp" %>
