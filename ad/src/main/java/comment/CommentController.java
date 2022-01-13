@@ -26,8 +26,8 @@ public class CommentController {
 	}
 	
 	@GetMapping("/comment/adqdelete.do")
-	public String delete(Model model, @RequestParam int C_no) {
-		model.addAttribute("result",service.adqdelete(C_no));
+	public String delete(Model model, CommentVo com) {
+		model.addAttribute("result",service.adqdelete(com.getC_no()));
 		return "admin/include/result";
 	}
 	

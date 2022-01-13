@@ -29,14 +29,11 @@
 			url:'/ad/comment/adqcominsert.do',
 			type:'get',
 			data:$("#frm").serialize(), // serialize() 값을 넣어준다
-			success:function(res){
-				if(res.trim()=='1'){
+			success:function(){
 					alert("댓글이 등록되었습니다."); //댓글이 등록되었을때
 					$("#content").val("");
 					commentList('adqna',${vo.adqna_no});
-				}else{
-					alert('댓글등록 오류');
-				}
+			
 			}
 		})
 	}

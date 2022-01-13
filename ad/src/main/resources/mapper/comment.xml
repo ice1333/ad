@@ -5,8 +5,7 @@
 
 		
 	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
-		SELECT * FROM comment 
-		WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
+		SELECT * FROM comment WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
 		ORDER BY regdate DESC
 		 
 	</select>

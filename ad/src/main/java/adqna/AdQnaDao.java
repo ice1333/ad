@@ -38,6 +38,7 @@ public class AdQnaDao {
 		return sst.update("adqna.statusupdate",adqna_no);
 	}
 	
+	//체크박스 선택삭제
 	public int adqnadelete(String adqna_no) {
 		return sst.delete("adqna.adqnadelete", adqna_no);
 	}

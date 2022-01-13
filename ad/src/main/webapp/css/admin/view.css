@@ -29,13 +29,13 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 1em;
-    margin-inline-end: 0px;
+    margin-inline-end: 1em;
 	}
 	.sub .size {
     width: 100%;
-    max-width: 1500px;
     height: auto;
     margin: 0 auto;
+    padding: 20px 20px;
 	}
 	.size {
     position: relative;
@@ -82,7 +82,7 @@
     margin-inline-start: 0px;
 	}
 	.bbs .view .cont {
-	padding-bottom:400px;
+	padding:20px;
     min-height: 200px;
     border-bottom: 1px solid #e4e4e4;
 	}
@@ -182,4 +182,17 @@
     width: 100%;
     height: 56px;
     background:url(/ad/img/admin/con_tit_bg.gif) repeat-x left top;
+	}
+	.list .dellight{
+	float:right;
+	display: inline-block;
+    padding-right: 4px;
+    background: url(/ad/img/admin/btn_bg.gif) no-repeat 100% 0;
+    font-size: 11px;
+    color: #797979;
+    line-height: 26px;
+    word-spacing: -1px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    color: #797979 !important;
 	}

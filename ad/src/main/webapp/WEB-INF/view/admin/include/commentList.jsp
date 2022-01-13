@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
       <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
- <style>
- 	.bbs .list span.comment{color:#999; font-size:12px !important; font-weight:normal !important;}
- </style>
+
 
  <table class="list">
     <colgroup>
@@ -26,7 +24,7 @@
                            <td>${vo.c_no}</td>
                            <td class="txt_l" style="text-align:left;">
                                ${vo.content}
-                               <a href="javascript:godel2(${vo.c_no});">[삭제]</a>
+                               <a class="dellight" href="javascript:goDel(${vo.c_no});"><strong>삭제</strong></a>
                            </td>
                            <td class="writer">
                               	${vo.a_no}

@@ -122,6 +122,11 @@
 		UPDATE ad.adqna SET aq_status=aq_staus+1 
 	</update>
 	
+	<!-- 답변대기 답변완료 -->
+	<select id="anscheckselect" parameterType="int">
+		select count from comment
+	</select>
+	
 	
 	
 </mapper>
