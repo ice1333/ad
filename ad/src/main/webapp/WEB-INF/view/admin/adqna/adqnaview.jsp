@@ -30,7 +30,7 @@
 			type:'get',
 			data:$("#frm").serialize(), // serialize() 값을 넣어준다
 			success:function(){
-					alert("댓글이 등록되었습니다."); //댓글이 등록되었을때
+					alert("답변이 완료되었습니다."); //댓글이 등록되었을때
 					$("#content").val("");
 					commentList('adqna',${vo.adqna_no});
 			
@@ -59,7 +59,7 @@
 						alert('정상적으로 삭제되었습니다.');
 						commentList('adqna', ${vo.adqna_no});
 					} else {
-						alert('삭제 오류');
+						alert('삭제 오류입니다. 확인하세요');
 					}
 				}
 			})

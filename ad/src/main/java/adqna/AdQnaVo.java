@@ -14,8 +14,15 @@ public class AdQnaVo extends SearchVo{
 	private int u_no;
 	private int a_no;
 	private String tablename;
+	private String status;
 	
 	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getTablename() {
 		return tablename;
 	}

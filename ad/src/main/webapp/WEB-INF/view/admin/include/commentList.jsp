@@ -21,7 +21,7 @@
                      <c:if test="${!empty list}">   
                      	<c:forEach var="vo" items="${list}" >     
                        <tr>
-                           <td>${vo.c_no}</td>
+                           <td>${vo.c_no}</td> <!-- 사용자할때는 가리고 그래야 번호가 안나오니깐-->
                            <td class="txt_l" style="text-align:left;">
                                ${vo.content}
                                <a class="dellight" href="javascript:goDel(${vo.c_no});"><strong>삭제</strong></a>
