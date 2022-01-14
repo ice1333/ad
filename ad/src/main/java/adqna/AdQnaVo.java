@@ -10,11 +10,24 @@ public class AdQnaVo extends SearchVo{
 	private String aq_filename_org;
 	private String aq_filename_real;
 	private Timestamp aq_regdate;
-	private int aq_status;
+	private String aq_status;
 	private int u_no;
 	private int a_no;
+	private String tablename;
 	
 	
+	public String getTablename() {
+		return tablename;
+	}
+	public void setTablename(String tablename) {
+		this.tablename = tablename;
+	}
+	public String getAq_status() {
+		return aq_status;
+	}
+	public void setAq_status(String aq_status) {
+		this.aq_status = aq_status;
+	}
 	public int getAdqna_no() {
 		return adqna_no;
 	}
@@ -50,12 +63,6 @@ public class AdQnaVo extends SearchVo{
 	}
 	public void setAq_regdate(Timestamp aq_regdate) {
 		this.aq_regdate = aq_regdate;
-	}
-	public int getAq_status() {
-		return aq_status;
-	}
-	public void setAq_status(int aq_status) {
-		this.aq_status = aq_status;
 	}
 	public int getU_no() {
 		return u_no;

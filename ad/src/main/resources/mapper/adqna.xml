@@ -111,21 +111,16 @@
 	
 	<!-- 목록 -->
 	<select id="adqnalist" resultType="adqna.AdQnaVo" parameterType="adqna.AdQnaVo">
-		SELECT * From ad.adqna 
+		SELECT *,(SELECT count(*) FROM ad.comment where tablename=#{tablename} and adqna_no=#{adqna_no}) status
+		From ad.adqna
 		<include refid="adqnaWhere"/>
 		ORDER BY aq_regdate DESC LIMIT ${startIdx},10
 	</select>
+
 	
 	
-	<!-- 관리자가 답변완료시 (아직안함)-->
-	<update id="statusupdate" parameterType="int">
-		UPDATE ad.adqna SET aq_status=aq_staus+1 
-	</update>
 	
-	<!-- 답변대기 답변완료 -->
-	<select id="anscheckselect" parameterType="int">
-		select count from comment
-	</select>
+	
 	
 	
 	

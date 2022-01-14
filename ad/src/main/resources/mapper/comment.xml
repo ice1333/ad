@@ -27,6 +27,16 @@
 		DELETE FROM comment WHERE c_no=#{c_no}
 	</delete>
 	
+	<!-- <select id="" resultType="" parameterType="">  지금은 ad.comment 유저쪽 생기면 유저테이블에서 이름가져와야댐
+		select u_name from ad.comment where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select> -->
+	
+	<!--  해당 댓글을 카운트해서 0보다 크면 답변완료 0보다 작으면 답변대기 
+	<select id="aqstatus" resultType="int" parameterType="comment.CommentVo">
+		select count(c_no) from ad.comment  
+		where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select>-->
+	
 	
 
 </mapper>

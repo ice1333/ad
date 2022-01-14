@@ -21,4 +21,7 @@ public class CommentDao {
 	public int adqdelete(int c_no) {
 		return sst.delete("comment.adqdelete",c_no);
 	}
+	public int aqstatus(int aq_status) {
+		return sst.selectOne("comment.aqstatus",aq_status);
+	}
 }

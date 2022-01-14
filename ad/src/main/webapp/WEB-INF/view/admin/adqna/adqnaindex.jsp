@@ -130,7 +130,7 @@
 										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>
 										<td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_no}</td>
-										<td class="last">${vo.aq_status}</td>
+										<td class="last">${vo.status}</td>
 									</tr>
 									</c:forEach>
 								</c:if>
