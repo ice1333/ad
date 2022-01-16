@@ -131,8 +131,8 @@
 										<td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_no}</td>
 										<td class="last"><c:choose>
-										<c:when test="${vo.status == 0}">답변대기</c:when>
-										<c:when test="${vo.status >= 1}">답변완료</c:when>
+										<c:when test="${vo.aq_status == 0}">답변대기</c:when>
+										<c:when test="${vo.aq_status >= 1}">답변완료</c:when>
 										</c:choose></td>
 										
 										

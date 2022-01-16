@@ -24,6 +24,8 @@ public class AdQnaController {
 	@Autowired
 	CommentService cmService;	
 	
+	//관리자 광고 문의 페이지
+	
 	@GetMapping("admin/adqnaindex.do") 
 	public String adqnaindex(Model model, HttpServletRequest req, AdQnaVo vo) {		
 		
@@ -45,7 +47,7 @@ public class AdQnaController {
 	
 	
 	@GetMapping("admin/adqnaview.do")
-	public String adqnaview(Model model,@RequestParam int adqna_no) {
+	public String adqnaview(Model model,@RequestParam int adqna_no ) {
 		model.addAttribute("vo",adqnaService.no_select(adqna_no));
 		CommentVo cv = new CommentVo();
 		cv.setAdqna_no(adqna_no);
@@ -65,11 +67,12 @@ public class AdQnaController {
 		return "admin/include/result";
 	}
 	
-	@GetMapping("admin/delete.do")
+	@GetMapping("admin/delete.do") 
 	public String delete(Model model, AdQnaVo vo) {
 		model.addAttribute("vo",adqnaService.delete(vo));
 		return "admin/adqna/adqnaindex";
 	}
+	
 	
 	
 	

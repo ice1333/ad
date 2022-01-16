@@ -88,7 +88,7 @@
 	                        <dl class="file">
 	                            <dt>첨부파일 </dt>
 	                            <dd>
-	                            <a href="/project/common/download.jsp?path=/upload/&org=${vo.aq_filename_org}&real=${vo.aq_filename_real}" 
+	                            <a href="/ad/common/download.jsp?path=/upload/&org=${vo.aq_filename_org}&real=${vo.aq_filename_real}" 
 	                            target="_blank">${vo.aq_filename_org} </a></dd>
 	                        </dl>
 	                       
